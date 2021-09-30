@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Axd-83-L9k">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GKx-2f-4PB">
+            <objects>
+                <tabBarController id="Axd-83-L9k" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ezw-0t-I3t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="v12-Go-CcS" kind="relationship" relationship="viewControllers" id="0O6-WI-My2"/>
+                        <segue destination="Ks0-Z4-qM3" kind="relationship" relationship="viewControllers" id="BVQ-5E-9Xb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBq-8e-N6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-455"/>
+        </scene>
+        <!--The MovieDB-->
+        <scene sceneID="wLY-AM-fpp">
+            <objects>
+                <viewController id="bIW-SE-ltb" customClass="MovieViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gmi-By-jVV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sqj-72-Hac">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bIW-SE-ltb" id="mAR-MZ-hQe"/>
+                                    <outlet property="delegate" destination="bIW-SE-ltb" id="FKb-gZ-wrV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cpK-FI-hSw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sqj-72-Hac" firstAttribute="leading" secondItem="cpK-FI-hSw" secondAttribute="leading" id="22q-Ey-GdY"/>
+                            <constraint firstItem="sqj-72-Hac" firstAttribute="top" secondItem="cpK-FI-hSw" secondAttribute="top" id="8wi-Vb-RKm"/>
+                            <constraint firstItem="cpK-FI-hSw" firstAttribute="bottom" secondItem="sqj-72-Hac" secondAttribute="bottom" id="9rm-qm-b7p"/>
+                            <constraint firstItem="cpK-FI-hSw" firstAttribute="trailing" secondItem="sqj-72-Hac" secondAttribute="trailing" id="fOR-sH-etC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="The MovieDB" id="IWe-xG-iHi"/>
+                    <connections>
+                        <outlet property="movieTableView" destination="sqj-72-Hac" id="Jzf-GJ-Lzj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYr-cm-mBM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2863.768115942029" y="-106.47321428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ppD-bY-auK">
+            <objects>
+                <viewController id="YrC-hc-0S2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PbY-OJ-YiK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jcQ-r1-Rwe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfo-xE-l7D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3820" y="-106"/>
+        </scene>
+        <!--TV-->
+        <scene sceneID="xMO-U5-SZS">
+            <objects>
+                <viewController id="XGx-Va-CRB" customClass="TVViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1yU-sa-fRf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="28k-j4-ZaF">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XGx-Va-CRB" id="c43-Kd-Vl7"/>
+                                    <outlet property="delegate" destination="XGx-Va-CRB" id="UHq-EJ-2RN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o4o-LG-BcA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o4o-LG-BcA" firstAttribute="bottom" secondItem="28k-j4-ZaF" secondAttribute="bottom" id="Epc-JO-mtc"/>
+                            <constraint firstItem="o4o-LG-BcA" firstAttribute="trailing" secondItem="28k-j4-ZaF" secondAttribute="trailing" id="N0d-s0-QFl"/>
+                            <constraint firstItem="28k-j4-ZaF" firstAttribute="top" secondItem="o4o-LG-BcA" secondAttribute="top" id="VF9-PW-Ru4"/>
+                            <constraint firstItem="28k-j4-ZaF" firstAttribute="leading" secondItem="o4o-LG-BcA" secondAttribute="leading" id="qhh-co-9Cd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TV" id="W8b-Ce-KDJ"/>
+                    <connections>
+                        <outlet property="tvTableView" destination="28k-j4-ZaF" id="uns-gI-4sf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IzR-l1-ygV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865.217391304348" y="-884.59821428571422"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xEZ-MG-vnx">
+            <objects>
+                <viewController id="fG7-Yh-swy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nDE-Rb-UbS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UJ0-OB-Bqg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CdC-yb-Thu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3820" y="-885"/>
+        </scene>
+        <!--Movie-->
+        <scene sceneID="LxY-kv-RFl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ks0-Z4-qM3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movie" image="4k.tv" catalog="system" id="hQw-St-abp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="AXE-dW-zNp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bIW-SE-ltb" kind="relationship" relationship="rootViewController" id="z1l-LZ-Bg1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wcf-cV-Sde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953.6231884057972" y="-106.47321428571428"/>
+        </scene>
+        <!--TV-->
+        <scene sceneID="ml7-Ma-ij7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v12-Go-CcS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TV" image="play.tv" catalog="system" id="5wF-SD-TlV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7Aa-RJ-RQ0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XGx-Va-CRB" kind="relationship" relationship="rootViewController" id="oMJ-AV-8JP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XH3-cU-Uv0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.072463768116" y="-884.59821428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="4k.tv" catalog="system" width="128" height="97"/>
+        <image name="play.tv" catalog="system" width="128" height="97"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
