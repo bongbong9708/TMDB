@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieViewController: UIViewController {
 
@@ -22,6 +23,11 @@ class MovieViewController: UIViewController {
         let posterNib = UINib(nibName: "PosterTableViewCell", bundle: nil)
         movieTableView.register(posterNib, forCellReuseIdentifier: "posterCell")
         
+        let backdropNib = UINib(nibName: "BackdropTableViewCell", bundle: nil)
+        movieTableView.register(backdropNib, forCellReuseIdentifier: "backdropCell")
+        
+        let explainNib = UINib(nibName: "ExplainTableViewCell", bundle: nil)
+        movieTableView.register(explainNib, forCellReuseIdentifier: "explainCell")
         
         getData()
     }
@@ -37,10 +43,10 @@ class MovieViewController: UIViewController {
             self.movieTableView.reloadData()
         }
         
-//        MApi.getMovie(source: .upcoming) { upcomings in
-//            self.upcomingMovie = upcomings
-//            self.movieTableView.reloadData()
-//        }
+        MApi.getMovie(source: .upcoming) { upcomings in
+            self.upcomingMovie = upcomings
+            self.movieTableView.reloadData()
+        }
     }
 
 }
@@ -52,33 +58,46 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 2 {
+            return topRatedMovie.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let pCell = movieTableView.dequeueReusableCell(withIdentifier: "posterCell", for: indexPath) as! PosterTableViewCell
+            let popularCell = movieTableView.dequeueReusableCell(withIdentifier: "posterCell", for: indexPath) as! PosterTableViewCell
             
-            pCell.getData(with: popularMovie)
+            popularCell.getData(with: popularMovie)
             
-            return pCell
+            return popularCell
         } else if indexPath.section == 1 {
-            let pCell = movieTableView.dequeueReusableCell(withIdentifier: "posterCell", for: indexPath) as! PosterTableViewCell
+            let upcomingCell = movieTableView.dequeueReusableCell(withIdentifier: "backdropCell", for: indexPath) as! BackdropTableViewCell
             
-            pCell.getData(with: popularMovie)
+            upcomingCell.getData(with: upcomingMovie)
             
-            return pCell
+            return upcomingCell
+        } else {
+            let topRatedCell = movieTableView.dequeueReusableCell(withIdentifier: "explainCell", for: indexPath) as! ExplainTableViewCell
+            
+            topRatedCell.titleLabel.text = topRatedMovie[indexPath.row].title
+            topRatedCell.languageLabel.text = topRatedMovie[indexPath.row].language.uppercased()
+            topRatedCell.dateLabel.text = topRatedMovie[indexPath.row].date
+            topRatedCell.avgLabel.text = String(topRatedMovie[indexPath.row].average)
+            topRatedCell.imageLabel.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(topRatedMovie[indexPath.row].poster)"))
+            
+            return topRatedCell
         }
-        let pCell = movieTableView.dequeueReusableCell(withIdentifier: "posterCell", for: indexPath) as! PosterTableViewCell
-        
-        pCell.getData(with: popularMovie)
-        
-        return pCell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 375
+        if indexPath.section == 0 {
+            return 375
+        } else {
+            return 200
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -91,7 +110,7 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 50
     }
     
 }
