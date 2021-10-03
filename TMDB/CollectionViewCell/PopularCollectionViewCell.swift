@@ -1,13 +1,13 @@
 //
-//  PosterCollectionViewCell.swift
+//  PopularCollectionViewCell.swift
 //  TMDB
 //
-//  Created by 이상봉 on 2021/09/30.
+//  Created by 이상봉 on 2021/10/03.
 //
 
 import UIKit
 
-class PosterCollectionViewCell: UICollectionViewCell {
+class PopularCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     

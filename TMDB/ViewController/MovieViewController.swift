@@ -69,13 +69,13 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let popularCell = movieTableView.dequeueReusableCell(withIdentifier: "posterCell", for: indexPath) as! PosterTableViewCell
             
-            popularCell.getData(with: popularMovie)
+            popularCell.getMovieData(with: popularMovie)
             
             return popularCell
         } else if indexPath.section == 1 {
             let upcomingCell = movieTableView.dequeueReusableCell(withIdentifier: "backdropCell", for: indexPath) as! BackdropTableViewCell
             
-            upcomingCell.getData(with: upcomingMovie)
+            upcomingCell.getMovieData(with: upcomingMovie)
             
             return upcomingCell
         } else {
@@ -102,8 +102,8 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Popualr"
-        } else if section == 1{
+            return "Popular"
+        } else if section == 1 {
             return "Upcoming"
         }
         return "Top Rated"

@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="3820" y="-106"/>
         </scene>
-        <!--TV-->
+        <!--The TVDB-->
         <scene sceneID="xMO-U5-SZS">
             <objects>
                 <viewController id="XGx-Va-CRB" customClass="TVViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                             <constraint firstItem="28k-j4-ZaF" firstAttribute="leading" secondItem="o4o-LG-BcA" secondAttribute="leading" id="qhh-co-9Cd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TV" id="W8b-Ce-KDJ"/>
+                    <navigationItem key="navigationItem" title="The TVDB" id="W8b-Ce-KDJ"/>
                     <connections>
                         <outlet property="tvTableView" destination="28k-j4-ZaF" id="uns-gI-4sf"/>
                     </connections>
