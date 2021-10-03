@@ -128,6 +128,28 @@
 			path = Movie;
 			sourceTree = "<group>";
 		};
+		4D0F55272709A8BD009DB9AC /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				4D0F551D27099AC2009DB9AC /* PopularCollectionViewCell.swift */,
+				4D0F551E27099AC2009DB9AC /* PopularCollectionViewCell.xib */,
+				4D0F552127099AD8009DB9AC /* OnTheAirCollectionViewCell.swift */,
+				4D0F552227099AD8009DB9AC /* OnTheAirCollectionViewCell.xib */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		4D0F55282709A8C8009DB9AC /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DB51A270585A400146CE2 /* PosterCollectionViewCell.swift */,
+				4D1DB51B270585A400146CE2 /* PosterCollectionViewCell.xib */,
+				4D1DB51E2705AB9700146CE2 /* BackDropCollectionViewCell.swift */,
+				4D1DB51F2705AB9700146CE2 /* BackDropCollectionViewCell.xib */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
 		4D1DB509270571D900146CE2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,14 +170,8 @@
 		4D1DB50D2705834F00146CE2 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				4D0F551D27099AC2009DB9AC /* PopularCollectionViewCell.swift */,
-				4D0F551E27099AC2009DB9AC /* PopularCollectionViewCell.xib */,
-				4D0F552127099AD8009DB9AC /* OnTheAirCollectionViewCell.swift */,
-				4D0F552227099AD8009DB9AC /* OnTheAirCollectionViewCell.xib */,
-				4D1DB51A270585A400146CE2 /* PosterCollectionViewCell.swift */,
-				4D1DB51B270585A400146CE2 /* PosterCollectionViewCell.xib */,
-				4D1DB51E2705AB9700146CE2 /* BackDropCollectionViewCell.swift */,
-				4D1DB51F2705AB9700146CE2 /* BackDropCollectionViewCell.xib */,
+				4D0F55272709A8BD009DB9AC /* TV */,
+				4D0F55282709A8C8009DB9AC /* Movie */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";

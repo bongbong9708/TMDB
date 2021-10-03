@@ -54,7 +54,7 @@ extension OnTheAirTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onTheAirCollectionViewCell", for: indexPath) as? OnTheAirCollectionViewCell {
             
             
-            cell.imageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(onTheAirTV[indexPath.row].backdrop)"))
+            cell.imageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(onTheAirTV[indexPath.row].backdrop ?? "")"))
             cell.nameLabel.text = onTheAirTV[indexPath.row].name
             
             return cell

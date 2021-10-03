@@ -8,7 +8,7 @@
 import Foundation
 
 struct TV: Codable {
-    var backdrop: String? = ""
+    var backdrop: String?
     var date: String = ""
     var id: Int = 0
     var name: String = ""
