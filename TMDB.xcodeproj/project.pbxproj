@@ -44,6 +44,8 @@
 		4D3B54B127043D7E003F698B /* TVResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B54B027043D7E003F698B /* TVResult.swift */; };
 		4D3EE9C52705CF51001C16CF /* ExplainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3EE9C32705CF51001C16CF /* ExplainTableViewCell.swift */; };
 		4D3EE9C62705CF51001C16CF /* ExplainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3EE9C42705CF51001C16CF /* ExplainTableViewCell.xib */; };
+		4DA43F13270ABB0A00F9B328 /* TVDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA43F12270ABB0A00F9B328 /* TVDetailViewController.swift */; };
+		4DA43F15270ABD9B00F9B328 /* TVDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA43F14270ABD9B00F9B328 /* TVDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		4D3B54B027043D7E003F698B /* TVResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVResult.swift; sourceTree = "<group>"; };
 		4D3EE9C32705CF51001C16CF /* ExplainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainTableViewCell.swift; sourceTree = "<group>"; };
 		4D3EE9C42705CF51001C16CF /* ExplainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainTableViewCell.xib; sourceTree = "<group>"; };
+		4DA43F12270ABB0A00F9B328 /* TVDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailViewController.swift; sourceTree = "<group>"; };
+		4DA43F14270ABD9B00F9B328 /* TVDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetail.swift; sourceTree = "<group>"; };
 		5978BD7B3B1848AC3E767132 /* Pods-TMDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB.debug.xcconfig"; path = "Target Support Files/Pods-TMDB/Pods-TMDB.debug.xcconfig"; sourceTree = "<group>"; };
 		CE027AD53AE16A2F7D0CB4B5 /* Pods-TMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB.release.xcconfig"; path = "Target Support Files/Pods-TMDB/Pods-TMDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +222,7 @@
 			children = (
 				4D3B54A327043277003F698B /* TVViewController.swift */,
 				4D3B54A527043283003F698B /* MovieViewController.swift */,
+				4DA43F12270ABB0A00F9B328 /* TVDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				4D3B54AC27043D66003F698B /* MovieResult.swift */,
 				4D3B54AE27043D74003F698B /* TV.swift */,
 				4D3B54B027043D7E003F698B /* TVResult.swift */,
+				4DA43F14270ABD9B00F9B328 /* TVDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				4D1DB50B270571EB00146CE2 /* AppConstants.swift in Sources */,
 				4D1DB50627056E1D00146CE2 /* MovieNetwork.swift in Sources */,
 				4D3EE9C52705CF51001C16CF /* ExplainTableViewCell.swift in Sources */,
+				4DA43F15270ABD9B00F9B328 /* TVDetail.swift in Sources */,
 				4D1DB51C270585A400146CE2 /* PosterCollectionViewCell.swift in Sources */,
 				4D3B549027042E4C003F698B /* AppDelegate.swift in Sources */,
 				4D1DB5202705AB9700146CE2 /* BackDropCollectionViewCell.swift in Sources */,
@@ -405,6 +412,7 @@
 				4D1DB50827056E2B00146CE2 /* MovieNetworkingManager.swift in Sources */,
 				4D3B54A427043277003F698B /* TVViewController.swift in Sources */,
 				4D0F550E27094F4B009DB9AC /* TVNetworkingManager.swift in Sources */,
+				4DA43F13270ABB0A00F9B328 /* TVDetailViewController.swift in Sources */,
 				4D3B549227042E4C003F698B /* SceneDelegate.swift in Sources */,
 				4D3B54AB27043D57003F698B /* Movie.swift in Sources */,
 				4D0F551B27099AA4009DB9AC /* TopRatedTableViewCell.swift in Sources */,

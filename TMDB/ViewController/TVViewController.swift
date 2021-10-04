@@ -14,6 +14,7 @@ class TVViewController: UIViewController {
     var popularTV: [TV] = []
     var topRatedTV: [TV] = []
     var onTheAirTV: [TV] = []
+    var detailTV: [TVDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,23 @@ class TVViewController: UIViewController {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toShowDetail", sender: nil)
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is TVDetailViewController {
+            let detailVC = segue.destination as! TVDetailViewController
+            let tvIndex = tvTableView.indexPathForSelectedRow?.row
+
+            detailVC.tvId = topRatedTV[tvIndex ?? 0].id
+        }
+    }
+    
+    
 }
+
 
 extension TVViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,6 +82,8 @@ extension TVViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let pCell = tvTableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as! PopularTableViewCell
+            
+            pCell.cellDelegate = self
             
             pCell.getTVData(with: popularTV)
             
@@ -109,5 +128,14 @@ extension TVViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    
+}
+
+extension TVViewController: CollectionViewCellDelegate {
+    func collectionView(collectionviewcell: PopularCollectionViewCell?, index: Int, didTappedInTableViewCell: PopularTableViewCell) {
+        performSegue(withIdentifier: "toShowDetail", sender: nil)
+
+        print("얼씨구")
+    }
     
 }

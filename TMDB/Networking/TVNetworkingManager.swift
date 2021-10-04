@@ -10,8 +10,8 @@ import Moya
 
 class TApi {
     static let provider = MoyaProvider<TVApi>()
+    
     static func getTV(source: TVApi, completion: @escaping ([TV]) -> ()) {
-        
         provider.request(source) { (result) in
             switch result {
             case .success(let response):
@@ -21,6 +21,26 @@ class TApi {
                     
                     completion(results.tvs)
                 } catch let err {
+                    print(err)
+                }
+                break
+                
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    
+    static func getDetailTV(tvId: Int, completion: @escaping (TVDetail) -> ()) {
+        provider.request(.detail(id: tvId)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let results = try JSONDecoder().decode(TVDetail.self, from: response.data)
+                    
+                    completion(results)
+                } catch let err{
                     print(err)
                 }
                 break

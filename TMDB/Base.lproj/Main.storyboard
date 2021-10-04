@@ -106,22 +106,33 @@
                     <navigationItem key="navigationItem" title="The TVDB" id="W8b-Ce-KDJ"/>
                     <connections>
                         <outlet property="tvTableView" destination="28k-j4-ZaF" id="uns-gI-4sf"/>
+                        <segue destination="fG7-Yh-swy" kind="show" identifier="toShowDetail" id="HcS-wf-Irw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzR-l1-ygV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2865.217391304348" y="-884.59821428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="xEZ-MG-vnx">
             <objects>
-                <viewController id="fG7-Yh-swy" sceneMemberID="viewController">
+                <viewController id="fG7-Yh-swy" customClass="TVDetailViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nDE-Rb-UbS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybn-vv-XSc">
+                                <rect key="frame" x="87" y="161" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UJ0-OB-Bqg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7GU-Ot-sVT"/>
+                    <connections>
+                        <outlet property="imageLabel" destination="ybn-vv-XSc" id="ElZ-NH-ILz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdC-yb-Thu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

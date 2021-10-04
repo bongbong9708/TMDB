@@ -12,6 +12,7 @@ enum TVApi{
     case popular
     case topRated
     case onTheAir
+    case detail(id: Int)
 }
 
 extension TVApi: TargetType{
@@ -28,6 +29,8 @@ extension TVApi: TargetType{
             return "popular"
         case .topRated:
             return "top_rated"
+        case .detail(id: let id):
+            return "\(id)"
         case .onTheAir:
             return "on_the_air"
         }
@@ -35,7 +38,7 @@ extension TVApi: TargetType{
     
     var method: Moya.Method {
         switch self {
-        case .popular, .topRated, .onTheAir:
+        case .popular, .topRated, .onTheAir, .detail(_):
             return .get
         }
     }
@@ -46,7 +49,7 @@ extension TVApi: TargetType{
     
     var task: Task {
         switch self {
-        case .popular, .topRated, .onTheAir:
+        case .popular, .topRated, .onTheAir, .detail(_):
             return .requestParameters(parameters: ["api_key" : Constants.tmdb_APIKey, "language" : " en-US"], encoding: URLEncoding.queryString)
         }
     }

@@ -13,7 +13,6 @@ struct TV: Codable {
     var id: Int = 0
     var name: String = ""
     var language: String = ""
-    var overview: String = ""
     var poster: String = ""
     var average: Double = 0.0
     
@@ -23,7 +22,6 @@ struct TV: Codable {
         case id
         case name
         case language = "original_language"
-        case overview
         case poster = "poster_path"
         case average = "vote_average"
     }
@@ -36,7 +34,6 @@ struct TV: Codable {
         id = try values.decode(Int.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
         language = try values.decode(String.self, forKey: .language)
-        overview = try values.decode(String.self, forKey: .overview)
         poster = try values.decode(String.self, forKey: .poster)
         average = try values.decode(Double.self, forKey: .average)
     }
