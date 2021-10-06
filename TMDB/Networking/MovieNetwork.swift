@@ -12,6 +12,7 @@ enum MovieApi {
     case popular
     case topRated
     case upcoming
+    case detail(id: Int)
 }
 
 extension MovieApi: TargetType {
@@ -30,12 +31,14 @@ extension MovieApi: TargetType {
             return "top_rated"
         case .upcoming:
             return "upcoming"
+        case .detail(id: let id):
+            return "\(id)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .popular, .topRated, .upcoming:
+        case .popular, .topRated, .upcoming, .detail(_):
             return .get
         }
     }
@@ -46,7 +49,7 @@ extension MovieApi: TargetType {
     
     var task: Task {
         switch self {
-        case .popular, .topRated, .upcoming:
+        case .popular, .topRated, .upcoming, .detail(_):
             return .requestParameters(parameters: ["api_key" : Constants.tmdb_APIKey, "language" : "en-US"], encoding: URLEncoding.queryString)
         }
     }

@@ -49,7 +49,7 @@ class TVViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toShowDetail", sender: nil)
+        performSegue(withIdentifier: "toShowTVDetail", sender: nil)
     }
 
     
@@ -133,9 +133,7 @@ extension TVViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TVViewController: CollectionViewCellDelegate {
     func collectionView(collectionviewcell: PopularCollectionViewCell?, index: Int, didTappedInTableViewCell: PopularTableViewCell) {
-        performSegue(withIdentifier: "toShowDetail", sender: nil)
-
-        print("얼씨구")
+        performSegue(withIdentifier: "toShowTVDetail", sender: nil)
     }
     
 }

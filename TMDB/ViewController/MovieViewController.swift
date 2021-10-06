@@ -15,11 +15,11 @@ class MovieViewController: UIViewController {
     var popularMovie: [Movie] = []
     var topRatedMovie: [Movie] = []
     var upcomingMovie: [Movie] = []
+    var detailMovie: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         let posterNib = UINib(nibName: "PosterTableViewCell", bundle: nil)
         movieTableView.register(posterNib, forCellReuseIdentifier: "posterCell")
         
@@ -46,6 +46,19 @@ class MovieViewController: UIViewController {
         MApi.getMovie(source: .upcoming) { upcomings in
             self.upcomingMovie = upcomings
             self.movieTableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toShowMovieDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is MovieDetailViewController {
+            let detailVC = segue.destination as! MovieDetailViewController
+            let movieIndex = movieTableView.indexPathForSelectedRow?.row
+
+            detailVC.movieId = topRatedMovie[movieIndex ?? 0].id
         }
     }
 

@@ -9,7 +9,7 @@ import Foundation
 
 struct TVDetail: Codable {
     var name: String = ""
-    var backdrop: String = ""
+    var backdrop: String?
     var firstDate: String = ""
     var overview: String = ""
     var voteAvg: Double = 0.0
@@ -32,7 +32,7 @@ struct TVDetail: Codable {
         let values = try decoder.container(keyedBy: TVDetailCodingKeys.self)
         
         name = try values.decode(String.self, forKey: .name)
-        backdrop = try values.decode(String.self, forKey: .backdrop)
+        backdrop = try values.decodeIfPresent(String.self, forKey: .backdrop)
         firstDate = try values.decode(String.self, forKey: .firstDate)
         overview = try values.decode(String.self, forKey: .overview)
         voteAvg = try values.decode(Double.self, forKey: .voteAvg)

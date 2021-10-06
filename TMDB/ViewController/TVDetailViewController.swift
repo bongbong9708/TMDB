@@ -27,10 +27,10 @@ class TVDetailViewController: UIViewController {
 
         print(tvId)
         
-        getDetailData(tvId: tvId)
+        getTVDetailData(tvId: tvId)
     }
     
-    func getDetailData(tvId: Int) {
+    func getTVDetailData(tvId: Int) {
         TApi.getDetailTV(tvId: tvId) { [self] result in
             self.tvDetail = result
             
@@ -38,7 +38,7 @@ class TVDetailViewController: UIViewController {
             self.imageLabel.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(tvDetail?.backdrop ?? "")"))
             self.dateLabel.text = "First air date : \(tvDetail?.firstDate ?? "")"
             self.overviewLabel.text = tvDetail?.overview
-            self.voteAvgLabel.text = "Vote Average : \(tvDetail?.voteAvg ?? 0.0) 점"
+            self.voteAvgLabel.text = "Vote Average : \(tvDetail?.voteAvg ?? 0.0)"
             self.homepageLabel.text = "Homepage : \(tvDetail?.homepage ?? "")"
             self.statusLabel.text = tvDetail?.status
             
