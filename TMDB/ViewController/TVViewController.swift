@@ -14,7 +14,7 @@ class TVViewController: UIViewController {
     var popularTV: [TV] = []
     var topRatedTV: [TV] = []
     var onTheAirTV: [TV] = []
-    var detailTV: [TVDetail] = []
+//    var detailTV: [TVDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +83,6 @@ extension TVViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let pCell = tvTableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as! PopularTableViewCell
             
-            pCell.cellDelegate = self
-            
             pCell.getTVData(with: popularTV)
             
             return pCell
@@ -128,12 +126,5 @@ extension TVViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
-    
-}
-
-extension TVViewController: CollectionViewCellDelegate {
-    func collectionView(collectionviewcell: PopularCollectionViewCell?, index: Int, didTappedInTableViewCell: PopularTableViewCell) {
-        performSegue(withIdentifier: "toShowTVDetail", sender: nil)
-    }
     
 }

@@ -15,7 +15,7 @@ class MovieViewController: UIViewController {
     var popularMovie: [Movie] = []
     var topRatedMovie: [Movie] = []
     var upcomingMovie: [Movie] = []
-    var detailMovie: [Movie] = []
+//    var detailMovie: [MovieDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,10 +9,6 @@ import UIKit
 import Kingfisher
 import MSPeekCollectionViewDelegateImplementation
 
-protocol CollectionViewCellDelegate: AnyObject {
-    func collectionView(collectionviewcell: PopularCollectionViewCell?, index: Int, didTappedInTableViewCell: PopularTableViewCell)
-}
-
 class PopularTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,8 +16,6 @@ class PopularTableViewCell: UITableViewCell {
     let behavior = MSCollectionViewPeekingBehavior()
     
     var popularTV: [TV] = []
-    
-    weak var cellDelegate: CollectionViewCellDelegate?
     
     func getTVData(with tvs: [TV]) {
         self.popularTV = tvs
@@ -67,16 +61,5 @@ extension PopularTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         
         return UICollectionViewCell()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? PopularCollectionViewCell
-        self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
-    }
-    
-    
     
 }
